@@ -39,8 +39,26 @@ public class Test {
 				}
 				}
 				System.out.println("Customers have been entered.");
+				System.out.println("Customers have been entered.");
+				System.out.println("Do you want to do another action? 1 for yes, 2 for no.");
+				choice = scan.nextInt();
+				if(choice == 1){
+					continueOn = true;
+				} else{
+					continueOn = false;
+				}
+				
 			} else{
 				store.nameOfBestCustomer();
+				System.out.println("Customers have been entered.");
+				System.out.println("Do you want to do another action? 1 for yes, 2 for no.");
+				choice = scan.nextInt();
+				if(choice == 1){
+					continueOn = true;
+				} else{
+					continueOn = false;
+				}
+				
 			}
 			
 			
