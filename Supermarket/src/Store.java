@@ -8,17 +8,21 @@ public class Store {
 		customers = new ArrayList<Customer>();
 	}
 
+	return isFound;
+	}
+	
 	public boolean addSale(String customerName, double amt) {
 		boolean isFound = false;
 		for (Customer customerArray : customers) {
 			if (customerArray.getName().equals(customerName)) {
+				customerArray.addAmt(amt);
+				isFound = true;
+				
+			} else{
 				Customer customer = new Customer(customerName, amt);
 				customers.add(customer);
 				isFound = false;
 				
-			} else{
-				customerArray.addAmt(amt);
-				isFound = true;
 			}
 		}
 		return isFound;
