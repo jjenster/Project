@@ -8,31 +8,28 @@ public class Store {
 		customers = new ArrayList<Customer>();
 	}
 
-	return isFound;
-	}
-	
 	public void addSale(String customerName, double amt) {
 		
-	boolean found = false;
+		boolean found = false;
 		
-	for (Customer customerArray : customers) {
-		if (customerArray.getName().equals(customerName)) {
-			customerArray.addAmt(amt);
-			System.out.println(customerArray.getName() + " spent "
-					+ customerArray.getAmt());
-			found = true;
+		for (Customer customerArray : customers) {
+			if (customerArray.getName().equals(customerName)) {
+				customerArray.addAmt(amt);
+				System.out.println(customerArray.getName() + " spent "
+						+ customerArray.getAmt());
+				found = true;
+			}
+				
+		if(!found){
+				Customer customer = new Customer(customerName, amt);
+				customers.add(customer);
+				System.out.println(customer + "spent" + customer.getAmt());
+				
+				
+			}
 		}
-				
-	if(!found){
-			Customer customer = new Customer(customerName, amt);
-			customers.add(customer);
-			System.out.println(customer + "spent" + customer.getAmt());
-				
-				
-		}
+		
 	}
-		
-}
 
 	public String nameOfBestCustomer() {
 		if(customers.size()==0){
@@ -49,6 +46,7 @@ public class Store {
 				System.out.println(maxName);
 			}
 			return maxName;
+			
 		}
 	}
 	
