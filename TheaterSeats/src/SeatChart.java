@@ -14,8 +14,8 @@ public class SeatChart {
 				
 				// last try still not working...
 				double price = seatChart[i][j];
-				seat = new Seat(price);
-				seat[i][j] = seat;
+				Seat seat = new Seat(price);
+				seats[i][j] = seat;
 				
 			//	seats[i][j] = seat.setPriceReturn(price);
 				
