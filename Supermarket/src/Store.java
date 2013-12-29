@@ -40,6 +40,7 @@ public class Store {
 					largest = customerArray.getTotal();
 					maxName = customerArray.getName();
 				}
+				System.out.println(maxName);
 			}
 			return maxName;
 		}
