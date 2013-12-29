@@ -11,22 +11,28 @@ public class Store {
 	return isFound;
 	}
 	
-	public boolean addSale(String customerName, double amt) {
-		boolean isFound = false;
-		for (Customer customerArray : customers) {
-			if (customerArray.getName().equals(customerName)) {
-				customerArray.addAmt(amt);
-				isFound = true;
-				
-			} else{
-				Customer customer = new Customer(customerName, amt);
-				customers.add(customer);
-				isFound = false;
-				
-			}
+	public void addSale(String customerName, double amt) {
+		
+	boolean found = false;
+		
+	for (Customer customerArray : customers) {
+		if (customerArray.getName().equals(customerName)) {
+			customerArray.addAmt(amt);
+			System.out.println(customerArray.getName() + " spent "
+					+ customerArray.getAmt());
+			found = true;
 		}
-		return isFound;
+				
+	if(!found){
+			Customer customer = new Customer(customerName, amt);
+			customers.add(customer);
+			System.out.println(customer + "spent" + customer.getAmt());
+				
+				
+		}
 	}
+		
+}
 
 	public String nameOfBestCustomer() {
 		if(customers.size()==0){
