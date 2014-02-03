@@ -8,20 +8,27 @@ public class Store {
 		customers = new ArrayList<Customer>();
 	}
 
-	public boolean addSale(String customerName, double amt) {
-		boolean isFound = false;
+	public void addSale(String customerName, double amt) {
+		
+		boolean found = false;
+		
 		for (Customer customerArray : customers) {
 			if (customerArray.getName().equals(customerName)) {
+				customerArray.addAmt(amt);
+				System.out.println(customerArray.getName() + " spent "
+						+ customerArray.getAmt());
+				found = true;
+			}
+				
+		if(!found){
 				Customer customer = new Customer(customerName, amt);
 				customers.add(customer);
-				isFound = false;
+				System.out.println(customer + "spent" + customer.getAmt());
 				
-			} else{
-				customerArray.addAmt(amt);
-				isFound = true;
+				
 			}
 		}
-		return isFound;
+		
 	}
 
 	public String nameOfBestCustomer() {
@@ -36,8 +43,10 @@ public class Store {
 					largest = customerArray.getTotal();
 					maxName = customerArray.getName();
 				}
+				System.out.println(maxName);
 			}
 			return maxName;
+			
 		}
 	}
 	
